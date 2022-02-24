@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/DanyaMarkov/react-movies/static/css/main.f0f6d286.css",
-    "main.js": "/DanyaMarkov/react-movies/static/js/main.96b66293.js",
+    "main.js": "/DanyaMarkov/react-movies/static/js/main.91ff0a5c.js",
     "index.html": "/DanyaMarkov/react-movies/index.html",
     "main.f0f6d286.css.map": "/DanyaMarkov/react-movies/static/css/main.f0f6d286.css.map",
-    "main.96b66293.js.map": "/DanyaMarkov/react-movies/static/js/main.96b66293.js.map"
+    "main.91ff0a5c.js.map": "/DanyaMarkov/react-movies/static/js/main.91ff0a5c.js.map"
   },
   "entrypoints": [
     "static/css/main.f0f6d286.css",
-    "static/js/main.96b66293.js"
+    "static/js/main.91ff0a5c.js"
   ]
 }
