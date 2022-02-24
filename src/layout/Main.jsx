@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { MoviesList } from "../components/MoviesList";
 import { Search } from "../components/Search";
-import { SelectTypeMovie } from "../components/SelectTypeMovie";
 
 import { Preloader } from "../Utilities/Preloader";
 
