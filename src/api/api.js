@@ -13,7 +13,8 @@ const instance = axios.create({
 
 export const searchAPI = {
     async getFoundMovies(searchString, movieType = "all") {
-        const response = await instance.get(`?apikey=${API_KEY}&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}`);
+        // const response = await instance.get(`?apikey=${API_KEY}&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}`);
+        const response = await instance.get(`?apikey=d2aefa25&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}`);
 
         //К нам поступает в виде ответа объект, содержащий разные поля. 
         //Мы берем только из свойства Search данные о фильмах
