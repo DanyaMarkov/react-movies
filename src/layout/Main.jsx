@@ -27,7 +27,7 @@ function Main() {
     }
 
     return (
-        <main className="container content">
+        <main className="app__main container content">
             <h1>Список фильмов</h1>
             <Search searchMovies={searchMovies} />
             {

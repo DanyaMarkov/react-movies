@@ -1,38 +1,58 @@
 .App {
-  text-align: center;
+  background-color: var(--app-main-background-color);
+  color: var(--app-main-text-color);
+  transition: background-color 300ms linear;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App nav {
+  background-color: var(--app-navbar-background-color);
+  color: var(--app-navbar-text-color);
+  transition: background-color 500ms linear, color 500ms linear;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App nav .row ul .switch label span {
+  background-color: var(--app-switch-color) !important;
+  border: var(--app-switch-border-color) !important;
+  padding-bottom: 14px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App nav .row ul .switch label span::after {
+  background-color: var(--app-switchButton-color) !important;
 }
 
-.App-link {
-  color: #61dafb;
+.App main button {
+  background-color: var(--app-searchButton-background-color) !important;
+  color: var(--app-searchButton-text-color) !important;
+  transition: background-color 500ms linear, color 500ms linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App main input {
+  background-color: var(--app-search-background-color) !important;
+  color: var(--app-search-text-color) !important;
+  transition: background-color 500ms linear, color 500ms linear;
+}
+.App main input::placeholder {
+  color: var(--app-search-placeholder-color) !important;
+  transition: background-color 500ms linear, color 500ms linear;
+}
+
+.App main label span::after {
+  background-color: var(--app-radio-background-color) !important;
+  transition: background-color 500ms linear, color 500ms linear;
+}
+.App main label span {
+  color: var(--app-radio-text-color);
+  transition: background-color 500ms linear, color 500ms linear;
+}
+
+.App main .movies .card {
+  background-color: var(--app-card-background-color);
+  color: var(--app-card-text-color);
+  transition: background-color 500ms linear, color 500ms linear;
+}
+
+.App footer {
+  background-color: var(--app-footer-background-color);
+  color: var(--app-footer-text-color);
+  transition: background-color 500ms linear, color 500ms linear;
 }
