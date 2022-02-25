@@ -25,6 +25,34 @@ nav {
   gap: 1rem;
 }
 
+html {
+  --app-navbar-background-color: rgb(100, 134, 228);
+  --app-navbar-text-color: rgb(255, 255, 255);
+
+  --app-switch-color: rgb(252, 252, 252);
+  --app-switch-border-color: 2px solid rgb(0, 0, 0);
+  --app-switchButton-color: rgb(39, 18, 133);
+
+  --app-main-background-color: rgb(255, 255, 255);
+  --app-main-text-color: rgb(0, 0, 0);
+
+  --app-searchButton-background-color: rgb(88, 95, 195);
+  --app-searchButton-text-color: rgb(255, 255, 255);
+
+  --app-search-background-color: rgb(221, 221, 221);
+  --app-search-placeholder-color: rgb(94, 94, 94);
+  --app-search-text-color: rgb(0, 0, 0);
+
+  --app-radio-background-color: rgb(41, 5, 82);
+  --app-radio-text-color: rgb(0, 0, 0);
+
+  --app-card-background-color: rgb(206, 218, 248);
+  --app-card-text-color: rgb(0, 0, 0);
+
+  --app-footer-background-color: rgb(37, 80, 199);
+  --app-footer-text-color: rgb(0, 0, 0);
+}
+
 html[data-theme="light"] {
   --app-navbar-background-color: rgb(100, 134, 228);
   --app-navbar-text-color: rgb(255, 255, 255);
@@ -79,4 +107,27 @@ html[data-theme="dark"] {
 
   --app-footer-background-color: rgb(0, 0, 0);
   --app-footer-text-color: rgb(255, 255, 255);
+}
+
+.activePage {
+  padding: 1px 5px;
+  margin: 2px;
+  border-radius: 10px;
+  border: black solid 1px;
+  background-color: #227966;
+  color: white;
+  font-weight: bold;
+}
+
+.paginatorButtonActive {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.paginatorButtonInactive {
+  padding: 8px;
+  border-radius: 5px;
+  pointer-events: none !important;
+  color: gray !important;
+  background-color: #cacaca !important;
 }

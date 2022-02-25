@@ -1,11 +1,22 @@
+import { useEffect } from 'react';
 import { useTheme } from '../hooks/use-theme'
 
 
 function Header() {
 
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme } = useTheme("light");
+
+    useEffect(() => {
+        if (document.documentElement.hasAttribute("app-theme")) {
+            //console.log("Есть данные о теме");
+        } else {
+            theme === "light" ? setTheme("light") : setTheme("dark");
+        }
+    }, []);
 
     const switchTheme = () => {
+        console.log("поменяли тему")
+        setTheme(theme);
         theme === "light" ? setTheme("dark") : setTheme("light")
     }
 

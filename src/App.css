@@ -27,6 +27,8 @@
 }
 
 .App main input {
+  border-radius: 15px !important;
+  padding-left: 20px !important;
   background-color: var(--app-search-background-color) !important;
   color: var(--app-search-text-color) !important;
   transition: background-color 500ms linear, color 500ms linear;

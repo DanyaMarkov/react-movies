@@ -1,9 +1,9 @@
 import { useState } from "react";
+import Paginator from "./Paginator";
 
 const Search = (props) => {
 
-    // const [currentList, setcurrentList] = useState("");
-    const [searchString, setSearchString] = useState("");
+    const [searchString, setSearchString] = useState("cowboy");
     const [selectedType, setSortType] = useState("all");
 
 
@@ -11,7 +11,7 @@ const Search = (props) => {
         if (e.key === "Enter") {
             setSearchString(searchString);
             // setcurrentList(searchString);
-            props.searchMovies(searchString, selectedType);
+            props.searchMovies(searchString, selectedType, 1);
         }
     }
 
@@ -19,7 +19,7 @@ const Search = (props) => {
         setSortType(e.target.dataset.type);
         // console.log("Установил его:" + e.target.dataset.type + " а в итоге имею: " + selectedType)
         //Тут надо через колбек
-        props.searchMovies(searchString, e.target.dataset.type);
+        props.searchMovies(searchString, e.target.dataset.type, 1);
         console.log("Установленный тип:" + selectedType);
     }
 
@@ -39,7 +39,7 @@ const Search = (props) => {
 
                 <button className="btn" onClick={
                     () => {
-                        props.searchMovies(searchString, selectedType)
+                        props.searchMovies(searchString, selectedType, 1)
                     }}>
                     Поиск
                 </button>
@@ -71,6 +71,26 @@ const Search = (props) => {
                     <span>Сериалы</span>
                 </label>
             </div>
+
+            {
+                props.totalResults > 10
+                    ? <Paginator searchString={searchString} selectedType={selectedType}
+                        totalResults={props.totalResults} searchMovies={props.searchMovies} />
+                    : ""
+            }
+
+
+            {/* <div className="row">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#!"><i class="material-icons">Предыдущая</i></a></li>
+                    <li class="active"><a href="#!">1</a></li>
+                    <li class="waves-effect"><a href="#!">2</a></li>
+                    <li class="waves-effect"><a href="#!">3</a></li>
+                    <li class="waves-effect"><a href="#!">4</a></li>
+                    <li class="waves-effect"><a href="#!">5</a></li>
+                    <li class="waves-effect"><a href="#!"><i class="material-icons">Следующая</i></a></li>
+                </ul>
+            </div> */}
         </div>
     );
 }

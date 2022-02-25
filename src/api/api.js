@@ -12,19 +12,22 @@ const instance = axios.create({
 });
 
 export const searchAPI = {
-    async getFoundMovies(searchString, movieType = "all") {
+    async getFoundMovies(searchString, movieType = "all", page = 1) {
         // const response = await instance.get(`?apikey=${API_KEY}&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}`);
-        const response = await instance.get(`?apikey=d2aefa25&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}`);
+        const response = await instance.get(`?apikey=d2aefa25&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}&page=${page}`);
 
         //К нам поступает в виде ответа объект, содержащий разные поля. 
         //Мы берем только из свойства Search данные о фильмах
-        // console.log("Сработал ПОИСК ДАННЫХ")
-        // console.log("searchString= " + searchString)
-        // console.log("movieType= " + movieType)
-        return response.data.Search;
+        // return response.data.Search;
+        return response.data;
     },
-    // async follow(userId) {
-    //     const response = await instance.post(`follow/${userId}`);
-    //     return response.data;
-    // },
+
+    async getPages(searchString, movieType = "all", page = 1) {
+
+        const response = await instance.get(`?apikey=d2aefa25&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}&page=${page}`);
+
+
+        return response.data;
+    },
+
 }
