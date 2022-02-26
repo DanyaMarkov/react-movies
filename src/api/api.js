@@ -22,11 +22,8 @@ export const searchAPI = {
         return response.data;
     },
 
-    async getPages(searchString, movieType = "all", page = 1) {
-
-        const response = await instance.get(`?apikey=d2aefa25&s=${searchString}${movieType !== "all" ? `&type=${movieType}` : ""}&page=${page}`);
-
-
+    async getDescription(movieID = "111") {
+        const response = await instance.get(`?apikey=d2aefa25&i=${movieID}&plot=full`);
         return response.data;
     },
 

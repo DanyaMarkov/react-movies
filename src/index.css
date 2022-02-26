@@ -131,3 +131,7 @@ html[data-theme="dark"] {
   color: gray !important;
   background-color: #cacaca !important;
 }
+
+/* .waves-effect {
+  z-index: 0 !important;
+} */
