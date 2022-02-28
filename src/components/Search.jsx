@@ -5,13 +5,18 @@ const Search = (props) => {
 
     const [searchString, setSearchString] = useState("cowboy");
     const [selectedType, setSortType] = useState("all");
+    const [pageNumber, setPageNumber] = useState(1);
 
+    const setPage = (page) => {
+        setPageNumber(page);
+    }
 
     const handleKey = (e) => {
         if (e.key === "Enter") {
             setSearchString(searchString);
             // setcurrentList(searchString);
             props.searchMovies(searchString, selectedType, 1);
+            setPage(1);
         }
     }
 
@@ -20,6 +25,7 @@ const Search = (props) => {
         // console.log("Установил его:" + e.target.dataset.type + " а в итоге имею: " + selectedType)
         //Тут надо через колбек
         props.searchMovies(searchString, e.target.dataset.type, 1);
+        setPage(1);
         console.log("Установленный тип:" + selectedType);
     }
 
@@ -40,6 +46,7 @@ const Search = (props) => {
                 <button className="btn" onClick={
                     () => {
                         props.searchMovies(searchString, selectedType, 1)
+                        setPage(1);
                     }}>
                     Поиск
                 </button>
@@ -75,7 +82,8 @@ const Search = (props) => {
             {
                 props.totalResults > 10
                     ? <Paginator searchString={searchString} selectedType={selectedType}
-                        totalResults={props.totalResults} searchMovies={props.searchMovies} />
+                        totalResults={props.totalResults} searchMovies={props.searchMovies}
+                        pageNumber={pageNumber} setPage={setPage} />
                     : ""
             }
 

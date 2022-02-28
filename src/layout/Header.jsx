@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect } from 'react';
 import { useTheme } from '../hooks/use-theme'
 
@@ -12,7 +13,7 @@ function Header() {
         } else {
             theme === "light" ? setTheme("light") : setTheme("dark");
         }
-    }, []);
+    }, [setTheme, theme]);
 
     const switchTheme = () => {
         console.log("поменяли тему")

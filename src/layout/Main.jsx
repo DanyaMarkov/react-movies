@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
-import { MoviesList } from "../components/MoviesList";
+import { useEffect, useState, lazy, Suspense } from "react";
+
 import { Search } from "../components/Search";
 import { Preloader } from "../Utilities/Preloader";
 import { searchAPI } from "../api/api";
+
+const MoviesList = lazy(
+    () => import('../components/MoviesList')
+);
 
 const Main = () => {
 
@@ -25,9 +29,7 @@ const Main = () => {
 
     return (
         <main className="app__main container content">
-
             <h2>Список произведений</h2>
-
             <Search
                 searchMovies={searchMovies}
                 totalResults={totalResults}
@@ -39,10 +41,12 @@ const Main = () => {
             {
                 loading
                     ? <Preloader />
-                    : <MoviesList movies={movies} />
+                    : <Suspense fallback={<Preloader />}>
+                        <MoviesList movies={movies} />
+                    </Suspense>
             }
         </main>
     );
 }
 
-export { Main }
+export default Main;

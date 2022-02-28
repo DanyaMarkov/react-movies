@@ -11,16 +11,10 @@ const Paginator = (props) => {
     }
 
     let portionSize = 10;
-
     let portionCount = Math.ceil(pagesCount / portionSize);
-
     let [portionNumber, setPortionNumber] = useState(1);
-    let [pageNumber, setPageNumber] = useState(1);
-
-
     let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
     let rightPortionPageNumber = portionNumber * portionSize;
-
 
     return (
         <div>
@@ -37,14 +31,10 @@ const Paginator = (props) => {
                         .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                         .map(p => {
                             return <div
-                                className={pageNumber === p ? "col activePage" : "col page"}
+                                className={props.pageNumber === p ? "col activePage" : "col page"}
                                 onClick={(e) => {
-                                    // props.onPageChanged(p) 
                                     props.searchMovies(props.searchString, props.selectedType, p);
-                                    setPageNumber(p)
-                                    //запрос за новой страницей
-
-
+                                    props.setPage(p)
                                 }}>{p}</div>
                         })
                     }
